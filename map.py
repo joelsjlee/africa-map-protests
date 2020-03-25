@@ -1,5 +1,5 @@
 import shapefile
-from bokeh.io import show
+from bokeh.io import show, output_file
 from bokeh.models import LogColorMapper, Circle, ColumnDataSource
 from bokeh.palettes import Viridis6 as palette
 from bokeh.plotting import figure
@@ -101,6 +101,7 @@ def points(plot):
     glyph = Circle(x="lons", y="lats", fill_color="red", fill_alpha=0.8)
 
     plot.add_glyph(data, glyph)
+    output_file("index.html")
     show(plot)
 
 
